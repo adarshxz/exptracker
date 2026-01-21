@@ -16,17 +16,24 @@ def add_expense(request):
         amount = request.POST.get('amount')
         category = request.POST.get('category')
         date = request.POST.get('date')
+        description = request.POST.get('description')
+        location = request.POST.get('location')
+        payment_method = request.POST.get('payment_method')
         
         Expense.objects.create(
             title=title,
             amount=amount,
             category=category,
-            date=date
+            date=date,
+            description=description,
+            location=location,
+            payment_method=payment_method
         )
         return redirect('expense_list')
     
     return render(request, 'expenses/add_expense.html', {
-        'categories': Expense.CATEGORY_CHOICES
+        'categories': Expense.CATEGORY_CHOICES,
+        'payment_methods': Expense.PAYMENT_CHOICES
     })
 
 def delete_expense(request, pk):
