@@ -27,7 +27,7 @@
                             <th>Payment</th>
                             <th>Location</th>
                             <th>Amount</th>
-                            <th>Details</th>
+
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -40,13 +40,7 @@
                             <td>{{ expense.payment_method }}</td>
                             <td>{{ expense.location|default:"-" }}</td>
                             <td>₹{{ expense.amount }}</td>
-                            <td>
-                                {% if expense.description %}
-                                <small class="text-muted">{{ expense.description|truncatechars:30 }}</small>
-                                {% else %}
-                                -
-                                {% endif %}
-                            </td>
+
                             <td>
                                 <a href="{% url 'delete_expense' expense.pk %}" class="btn btn-sm btn-outline-danger"
                                     onclick="return confirm('Are you sure?')">Delete</a>

@@ -16,7 +16,6 @@ def add_expense(request):
         amount = request.POST.get('amount')
         category = request.POST.get('category')
         date = request.POST.get('date')
-        description = request.POST.get('description')
         location = request.POST.get('location')
         payment_method = request.POST.get('payment_method')
         
@@ -25,7 +24,6 @@ def add_expense(request):
             amount=amount,
             category=category,
             date=date,
-            description=description,
             location=location,
             payment_method=payment_method
         )

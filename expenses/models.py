@@ -22,7 +22,7 @@ class Expense(models.Model):
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     category = models.CharField(max_length=50, choices=CATEGORY_CHOICES)
     date = models.DateField()
-    description = models.TextField(blank=True, null=True)
+
     location = models.CharField(max_length=200, blank=True, null=True)
     payment_method = models.CharField(max_length=50, choices=PAYMENT_CHOICES, default='Cash')
 
